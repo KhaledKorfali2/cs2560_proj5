@@ -22,7 +22,7 @@ int IntArray::get(int index) const
 {
 	if (index < 0 || index >= numOfElements)
 	{
-		std::cerr << "Error: IntArray index " << index << " out of bounds." << std::endl;
+		std::cerr << "IntArray: index " << index << " out of bound" << std::endl;
 		exit(1);
 	}
 
@@ -50,7 +50,7 @@ void IntArray::set(int index, int value)
 {
 	if (index < 0 || index >= numOfElements)
 	{
-		std::cerr << "Error: IntArray index " << index << " out of bounds." << std::endl;
+		std::cerr << "IntArray: index " << index << " out of bound" << std::endl;
 		exit(1);
 	}
 

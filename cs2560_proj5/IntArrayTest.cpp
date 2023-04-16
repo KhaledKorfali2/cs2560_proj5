@@ -44,6 +44,9 @@ int main()
 
 	double average;
 
+	// Display header
+	cout << "IntArray by K. Korfali" << endl << endl;
+
 	// Output error message if file not successfully opened
 	if (!inFile.is_open())
 	{
@@ -63,13 +66,17 @@ int main()
 	// Convert IntArray to array of integers using toArray
 	int* intArray = myIntArray.toArray();
 
+	// Calculate the sum of elements in intArray
 	for (int i = 0; i < myIntArray.getLength(); i++) {
 		sum += intArray[i];
 	}
+
+	// Calculates the average of elements in intArray
 	if (myIntArray.getLength() > 0) {
 		average = static_cast<double>(sum) / myIntArray.getLength();
 	}
 
+	// Display outputs
 	cout << "Data count = " << myIntArray.getLength() << endl;
 	cout << "Values = " << myIntArray.toString() << endl;
 	cout << "Sum = " << sum << endl;
@@ -81,10 +88,12 @@ int main()
 	cout << "Element at index 10 before myIntArray.set(10, 100): " << myIntArray.get(10) << endl;
 	myIntArray.set(10, 100); // Set 10th element to 10
 	cout << "Element at index 10 after myIntArray.set(10, 100): " << myIntArray.get(10) << endl;
-
-
-	cout << "Element at index 100: " << myIntArray.get(100) << endl; // should output error message
-
+	cout << "Testing error handling of set and get: " << endl;
+	cout << "Set: ";
+	myIntArray.set(myIntArray.getLength(), 100); // Set an out of bounds element to 10 (outputs error)
+	cout << "Get: ";
+	myIntArray.get(myIntArray.getLength()); // Get an out of bounds element (outputs error)
+	
 	// Memory management
 	delete[] intArray;
 

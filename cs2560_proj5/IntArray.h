@@ -15,6 +15,6 @@ public:
 	int get(int index) const;
 	bool add(int value);
 	void set(int index, int value);
-	int* toArray();
-	std::string toString();
+	int* toArray() const;
+	std::string toString() const;
 };

@@ -145,6 +145,9 @@
   <ItemGroup>
     <ClInclude Include="IntArray.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="input.dat" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

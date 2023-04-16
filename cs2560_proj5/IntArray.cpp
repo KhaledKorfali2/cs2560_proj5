@@ -3,7 +3,7 @@
 #include<string>
 #include<iostream>
 
-IntArray::IntArray(int size = 100)
+IntArray::IntArray(int size)
 {
 	this->size = size;
 	numOfElements = 0;
@@ -15,11 +15,17 @@ IntArray::~IntArray()
 }
 int IntArray::getLength() const
 {
-	return size;
+	return numOfElements;
 }
 
 int IntArray::get(int index) const
 {
+	if (index < 0 || index >= numOfElements)
+	{
+		std::cerr << "Error: IntArray index " << index << " out of bounds." << std::endl;
+		exit(1);
+	}
+
 	return *(dynamicIntArray + index);
 }
 
@@ -37,27 +43,34 @@ bool IntArray::add(int value)
 		delete[] dynamicIntArray;
 		dynamicIntArray = newDynamicIntArray;
 	}
-	*(dynamicIntArray + numOfElements) = value;
+	*(dynamicIntArray + numOfElements - 1) = value;
+	return true;
 }
 void IntArray::set(int index, int value)
 {
+	if (index < 0 || index >= numOfElements)
+	{
+		std::cerr << "Error: IntArray index " << index << " out of bounds." << std::endl;
+		exit(1);
+	}
+
 	*(dynamicIntArray + index) = value;
 }
 
-int* IntArray::toArray()
+int* IntArray::toArray() const
 {
 	return dynamicIntArray;
 }
 
-std::string IntArray::toString()
+std::string IntArray::toString() const
 {
 	std::stringstream buffer;
-	for (int i = 0; i < size; i++)
+	for (int i = 0; i < numOfElements; i++)
 	{
 		buffer << *(dynamicIntArray + i);
-		if (i != size - 1)
+		if (i != numOfElements - 1)
 		{
-			buffer << ", ";
+			buffer << ",";
 		}
 	}
 

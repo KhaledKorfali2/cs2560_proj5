@@ -102,7 +102,7 @@ int main()
 
 
 	// Memory management
-	//delete[] intArray;
+	delete[] intArray;
 
 	// Return zero to indicate succsesful execution of program
 	return 0;

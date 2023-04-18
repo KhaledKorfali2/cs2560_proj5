@@ -118,7 +118,7 @@ void generateRandomInputFile()
 	file.open("input.dat");
 	srand(time(0));
 	int cap = rand() % 500;
-	for (int i = 0; i < 100; i++)
+	for (int i = 0; i < 123; i++)
 	{
 		file << rand() % 10999 - 999 << endl;
 	}

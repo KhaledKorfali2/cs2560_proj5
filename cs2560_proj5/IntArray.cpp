@@ -9,10 +9,14 @@ IntArray::IntArray(int size)
 	numOfElements = 0;
 	dynamicIntArray = new int[size];
 }
+
+
 IntArray::~IntArray()
 {
 	delete[] dynamicIntArray;
 }
+
+
 int IntArray::getLength() const
 {
 	return numOfElements;
@@ -26,6 +30,7 @@ int IntArray::get(int index) const
 		exit(1);
 	}
 
+
 	return *(dynamicIntArray + index);
 }
 
@@ -36,7 +41,8 @@ bool IntArray::add(int value)
 	{
 		size *= 2;
 		int* newDynamicIntArray = new int[size];
-		for (int i = 0; i < numOfElements; i++) {
+		for (int i = 0; i < numOfElements; i++) 
+		{
 			*(newDynamicIntArray + i) = *(dynamicIntArray + i);
 		}
 
@@ -46,6 +52,8 @@ bool IntArray::add(int value)
 	*(dynamicIntArray + numOfElements - 1) = value;
 	return true;
 }
+
+
 void IntArray::set(int index, int value)
 {
 	if (index < 0 || index >= numOfElements)
@@ -59,7 +67,11 @@ void IntArray::set(int index, int value)
 
 int* IntArray::toArray() const
 {
-	return dynamicIntArray;
+	int* newArray = new int[numOfElements];
+	for (int i = 0; i < numOfElements; i++) {
+		*(newArray + i) = *(dynamicIntArray + i);
+	}
+	return newArray;
 }
 
 std::string IntArray::toString() const

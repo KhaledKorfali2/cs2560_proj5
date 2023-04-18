@@ -33,7 +33,7 @@ int main()
 	#endif // DEBUG
 
 	// Variables
-	IntArray myIntArray(50);
+	IntArray myIntArray(5);
 
 	string fileName = "input.dat";
 
@@ -67,12 +67,14 @@ int main()
 	int* intArray = myIntArray.toArray();
 
 	// Calculate the sum of elements in intArray
-	for (int i = 0; i < myIntArray.getLength(); i++) {
+	for (int i = 0; i < myIntArray.getLength(); i++) 
+	{
 		sum += intArray[i];
 	}
 
 	// Calculates the average of elements in intArray
-	if (myIntArray.getLength() > 0) {
+	if (myIntArray.getLength() > 0) 
+	{
 		average = static_cast<double>(sum) / myIntArray.getLength();
 	}
 
@@ -83,19 +85,24 @@ int main()
 	cout << "Average = " << setprecision(1) << fixed << showpoint << average << endl;
 
 	
-
+	cout << endl;
 	// Test member functions not used in a-d
 	cout << "Element at index 10 before myIntArray.set(10, 100): " << myIntArray.get(10) << endl;
-	myIntArray.set(10, 100); // Set 10th element to 10
+	myIntArray.set(10, 100); // Set 10th element to 100
 	cout << "Element at index 10 after myIntArray.set(10, 100): " << myIntArray.get(10) << endl;
-	cout << "Testing error handling of set and get: " << endl;
-	cout << "Set: ";
-	myIntArray.set(myIntArray.getLength(), 100); // Set an out of bounds element to 10 (outputs error)
-	cout << "Get: ";
-	myIntArray.get(myIntArray.getLength()); // Get an out of bounds element (outputs error)
 	
+	
+	// Testing error handling for set and get functions
+	// cout << "Testing error handling of set and get: " << endl;
+	//cout << "Set: ";
+	//myIntArray.set(myIntArray.getLength(), 100); // Set an out of bounds element to 10 (outputs error)
+	//cout << "Get: ";
+	//myIntArray.get(myIntArray.getLength()); // Get an out of bounds element (outputs error)
+	
+
+
 	// Memory management
-	delete[] intArray;
+	//delete[] intArray;
 
 	// Return zero to indicate succsesful execution of program
 	return 0;

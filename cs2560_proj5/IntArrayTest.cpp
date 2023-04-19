@@ -1,11 +1,15 @@
 //
 // Name:	Korfali, Khaled
 // Project:	5
-// Due: 	04-10-2023
+// Due: 	04-19-2023
 // Course:	cs-2560-01-sp23
 //
 // Description:
-//		This code 
+//		This code reads a list of integers from a file named "input.dat"
+//		and stores them in an IntArray object. It then calculates the sum
+//		and average of the integers in the array and displays the results.
+//		The program also includes testing/debugging functionality to generate
+//		a random input file containing integers between -999 and 9999.
 //
 #include"IntArray.h"
 #include<iostream>
@@ -76,6 +80,10 @@ int main()
 	if (myIntArray.getLength() > 0) 
 	{
 		average = static_cast<double>(sum) / myIntArray.getLength();
+	}
+	else // If no elements in array then average defualts to zero
+	{
+		average = 0;
 	}
 
 	// Display outputs

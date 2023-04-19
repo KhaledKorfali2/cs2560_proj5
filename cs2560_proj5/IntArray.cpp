@@ -1,3 +1,21 @@
+//
+// Name:	Korfali, Khaled
+// Project:	5
+// Due: 	04-19-2023
+// Course:	cs-2560-01-sp23
+//
+// Description:
+//		This code implements the IntArray class that was defined in
+//		IntArray.h, which represents a dynamic array of integers.
+//		The class has methods to add elements to the end of the array,
+//		retrieve elements at specific indices, and modify elements at
+//		specific indices. The class also provides a method to convert
+//		the dynamic array to a regular array and a method to convert
+//		the dynamic array to a string representation. The dynamic array
+//		is implemented using a pointer to an int and is dynamically
+//		resized when the number of elements exceeds the size of the array.
+//
+
 #include"IntArray.h"
 #include<sstream>
 #include<string>
